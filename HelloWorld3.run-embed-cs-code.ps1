@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 [CmdletBinding()] Param( [parameter(Mandatory=$false)] [String] $optionalParam = "")
 $ErrorActionPreference = "Stop"; trap [Exception] { $Host.UI.WriteErrorLine($_); Read-Host; break; }
 
