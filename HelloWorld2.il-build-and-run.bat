@@ -7,5 +7,5 @@ REM alternatives: csc-version: v2.0.50727, v3.5, v4.0.30319,
 IF %ERRORLEVEL% NEQ 0 ( ECHO Error & PAUSE > NUL: & EXIT /B 1 )
 "%o%" %*
 DEL "%o%"
-ECHO "Press enter to exit."
+ECHO "Press Enter to exit."
 PAUSE > NUL:

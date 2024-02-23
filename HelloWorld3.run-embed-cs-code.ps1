@@ -15,4 +15,4 @@ $source = @"
 Add-Type -ReferencedAssemblies $assemblies -TypeDefinition $source -Language CSharp;
 [HelloWorld]::Main($optionalParam);
 
-Read-Host "Press enter to exit";
+Read-Host "Press Enter to exit.";
