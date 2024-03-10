@@ -1,7 +1,8 @@
 #!/usr/bin/env pwsh
 
 Param( [parameter(Mandatory=$false)] [String] $optionalParam = "");
-Set-StrictMode -Version Latest; trap [Exception] { $Host.UI.WriteErrorLine("Error: $_"); Read-Host "Press Enter to Exit"; break; } $ErrorActionPreference = "Stop";
+
+Set-StrictMode -Version Latest; trap [Exception] { Write-Error $_; Read-Host "Press Enter to Exit"; break; } $ErrorActionPreference = "Stop";
 
 $assemblies = (	"System" );
 $source = @"
