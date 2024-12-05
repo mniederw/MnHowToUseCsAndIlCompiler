@@ -16,6 +16,6 @@ Examples:
 
 - HelloWorld1 : Example C-Sharp file which can be compiled and run ad-hoc.
 
-- HelloWorld2 : Example IL file which can be compiled and run ad-hoc.
+- HelloWorld2 : Example IL Intermediate Language file which can be compiled and run ad-hoc.
 
-- HelloWorld3 : Example PS file how a C-Sharp source code can be embedded in powershell script to be run.
+- HelloWorld3 : Example PS file, how to embed C-Sharp source code into the ps script and run it ad-hoc.
