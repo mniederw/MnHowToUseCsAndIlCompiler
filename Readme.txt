@@ -19,3 +19,5 @@ Examples:
 - HelloWorld2 : Example IL Intermediate Language file which can be compiled and run ad-hoc.
 
 - HelloWorld3 : Example PS file, how to embed C-Sharp source code into the ps script and run it ad-hoc.
+
+- HelloWorld4 : Example PS file, how to embed C-Sharp source code into the ps script, specify assemblies and run it ad-hoc.
