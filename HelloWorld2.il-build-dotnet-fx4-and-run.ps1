@@ -2,7 +2,9 @@
 
 Param();
 
-Set-StrictMode -Version Latest; trap [Exception] { Write-Error -ErrorAction Continue $_; Read-Host "Press Enter to Exit"; break; } $ErrorActionPreference = "Stop";
+Set-StrictMode -Version Latest;
+trap [Exception] { Write-Error -ErrorAction Continue $_; Read-Host "Press Enter to Exit"; break; }
+$ErrorActionPreference = "Stop";
 
 [String] $fn = ([System.IO.Path]::GetFileNameWithoutExtension($PSCommandPath) -split "\.")[0];
 [String] $src = Join-Path $PSScriptRoot "$fn.il";

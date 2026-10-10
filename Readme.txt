@@ -1,4 +1,4 @@
-﻿MN - How To Use C-Sharp and IL-Compiler
+MN - How To Use C-Sharp and IL-Compiler
 ---------------------------------------
 
 These examples show how an IL or a c-sharp file can be compiled to a temporary exe,
@@ -14,9 +14,9 @@ To test these examples, just run each of the following files:
 
 Examples:
 
-- HelloWorld1 : Example C-Sharp file which can be compiled and run ad-hoc.
+- HelloWorld1 : Example C-Sharp file which can be compiled by Framework 4.x and run ad-hoc.
 
-- HelloWorld2 : Example IL Intermediate Language file which can be compiled and run ad-hoc.
+- HelloWorld2 : Example IL Intermediate Language file which can be compiled by Framework 4.x and run ad-hoc.
 
 - HelloWorld3 : Example PS file, how to embed C-Sharp source code into the ps script and run it ad-hoc.
 

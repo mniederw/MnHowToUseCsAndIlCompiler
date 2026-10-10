@@ -1,24 +1,24 @@
 #!/usr/bin/env pwsh
 
-Param( [parameter(Mandatory=$false)] [String[]] $args = @());
+Param( [parameter(Mandatory=$false)] [Object[]] $args = @());
 
-Set-StrictMode -Version Latest; trap [Exception] { Write-Error -ErrorAction Continue $_; Read-Host "Press Enter to Exit"; break; } $ErrorActionPreference = "Stop";
+Set-StrictMode -Version Latest; 
+trap [Exception] { Write-Error -ErrorAction Continue $_; Read-Host "Press Enter to Exit"; break; }
+$ErrorActionPreference = "Stop";
 
-
-
-$cSharpSourceCode2 = @"
+[String] $cSharpSourceCode2 = @"
   using System; using System.Linq;
-  public class HelloWorld{
-    public static void Main( string[] args = null ){
-      Console.WriteLine("Hello, World! Args=" + string.Join(" ",(args ?? new string[0]).Select(item => "\""+item+"\"")) + ".");
+  public class HelloWorld3{
+    public static void Main( String[] args = null ){
+      Console.WriteLine("Hello World 3! Args=" + String.Join(" ",(args ?? new String[0]).Select(item => "\""+item+"\"")) + ".");
     }
   }
-"@
+"@;
+
 Add-Type -Language CSharp -TypeDefinition $cSharpSourceCode2;
-[HelloWorld]::Main();
-[HelloWorld]::Main(@("hi","you"));
-[HelloWorld]::Main($args);
 
-
+[HelloWorld3]::Main();
+[HelloWorld3]::Main(@("hi","you"));
+[HelloWorld3]::Main($args);
 
 Read-Host "Press Enter to exit.";

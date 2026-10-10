@@ -1,31 +1,25 @@
 #!/usr/bin/env pwsh
 
-Param( [parameter(Mandatory=$false)] [String[]] $args = @());
+Param( [parameter(Mandatory=$false)] [Object[]] $args = @());
 
-Set-StrictMode -Version Latest; trap [Exception] { Write-Error -ErrorAction Continue $_; Read-Host "Press Enter to Exit"; break; } $ErrorActionPreference = "Stop";
+Set-StrictMode -Version Latest;
+trap [Exception] { Write-Error -ErrorAction Continue $_; Read-Host "Press Enter to Exit"; break; }
+$ErrorActionPreference = "Stop";
 
-
-
-$assemblies = (	"System", "System.Linq", ([System.Console].Assembly.Location) );
-$cSharpSourceCode = @"
+[String[]] $assemblies = (	"System", "System.Linq", ([System.Console].Assembly.Location) );
+[String] $cSharpSourceCode = @"
   using System; using System.Linq;
-  public static class HelloWorld {
-    public static void Main( string[] args = null ) {
-      Console.WriteLine("Hello, World! Args=" + string.Join(" ",(args ?? new string[0]).Select(item => "\""+item+"\"")) + ".");
-    }
-    public static void SayHello( string[] args = null ){
-      Console.WriteLine("Hello, World! Args=" + string.Join(" ",(args ?? new string[0]).Select(item => "\""+item+"\"")) + ".");
+  public static class HelloWorld4 {
+    public static void Main( String[] args = null ) {
+      Console.WriteLine("Hello, World 4! Args=" + String.Join(" ",(args ?? new String[0]).Select(item => "\""+item+"\"")) + ".");
     }
   }
-"@
+"@;
+
 Add-Type -Language CSharp -ReferencedAssemblies $assemblies -TypeDefinition $cSharpSourceCode;
-[HelloWorld]::Main();
-[HelloWorld]::Main(@("hi","you"));
-[HelloWorld]::Main($args);
-[HelloWorld]::SayHello();
-[HelloWorld]::SayHello(@("hi","you"));
-[HelloWorld]::SayHello($args);
 
-
+[HelloWorld4]::Main();
+[HelloWorld4]::Main(@("hi","you"));
+[HelloWorld4]::Main($args);
 
 Read-Host "Press Enter to exit.";
